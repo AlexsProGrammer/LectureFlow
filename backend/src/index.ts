@@ -10,6 +10,8 @@ import { authRoutes } from "./api/auth.routes.js";
 import { quizzesRoutes } from "./api/quizzes.routes.js";
 import { uploadsRoutes } from "./api/uploads.routes.js";
 import { exportRoutes } from "./api/export.routes.js";
+import { roomsRoutes } from "./api/rooms.routes.js";
+import { initWebSockets } from "./sockets/index.js";
 
 const app = Fastify({
   logger: {
@@ -69,6 +71,7 @@ app.register(authRoutes, { prefix: "/api/auth" });
 app.register(quizzesRoutes, { prefix: "/api" });
 app.register(uploadsRoutes, { prefix: "/api" });
 app.register(exportRoutes, { prefix: "/api" });
+app.register(roomsRoutes, { prefix: "/api" });
 
 app.get("/health", async () => {
   return { status: "ok", timestamp: new Date().toISOString() };
@@ -77,6 +80,8 @@ app.get("/health", async () => {
 const port = parseInt(process.env.APP_PORT || "3000", 10);
 
 try {
+  await app.ready();
+  const io = initWebSockets(app.server, redis);
   await app.listen({ port, host: "0.0.0.0" });
   console.log(`Server running on http://0.0.0.0:${port}`);
 } catch (err) {
