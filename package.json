@@ -1,37 +1,19 @@
 {
-  "name": "lectureflow",
+  "name": "lectureflow-monorepo",
   "version": "0.1.0",
   "private": true,
-  "type": "module",
   "scripts": {
-    "dev": "tsx watch src/index.ts",
-    "start": "tsx src/index.ts",
-    "db:generate": "drizzle-kit generate",
-    "db:push": "drizzle-kit push",
-    "db:migrate": "drizzle-kit migrate",
-    "db:seed": "tsx src/db/seed.ts"
+    "dev": "pnpm --filter @lectureflow/backend dev",
+    "start": "pnpm --filter @lectureflow/backend start",
+    "dev:backend": "pnpm --filter @lectureflow/backend dev",
+    "start:backend": "pnpm --filter @lectureflow/backend start",
+    "dev:frontend": "pnpm --filter @lectureflow/frontend dev",
+    "db:generate": "pnpm --filter @lectureflow/backend db:generate",
+    "db:push": "pnpm --filter @lectureflow/backend db:push",
+    "db:migrate": "pnpm --filter @lectureflow/backend db:migrate",
+    "db:seed": "pnpm --filter @lectureflow/backend db:seed"
   },
-  "dependencies": {
-    "drizzle-orm": "^0.44.7",
-    "pg": "^8.16.3",
-    "dotenv": "^16.5.0",
-    "fastify": "^5.0.0",
-    "@fastify/cors": "^10.0.0",
-    "@fastify/helmet": "^12.0.0",
-    "@fastify/rate-limit": "^10.0.0",
-    "@fastify/jwt": "^9.0.0",
-    "@fastify/multipart": "^9.0.0",
-    "bcrypt": "^5.1.0",
-    "ioredis": "^5.4.0",
-    "csv-parse": "^5.5.0",
-    "csv-stringify": "^6.5.0"
-  },
-  "devDependencies": {
-    "drizzle-kit": "^0.31.6",
-    "tsx": "^4.20.5",
-    "typescript": "^5.8.3",
-    "@types/node": "^22.15.29",
-    "@types/pg": "^8.15.5",
-    "@types/bcrypt": "^5.0.0"
+  "pnpm": {
+    "onlyBuiltDependencies": ["bcrypt"]
   }
 }
