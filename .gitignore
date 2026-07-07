@@ -1,1 +1,7 @@
 .kilo/
+node_modules/
+dist/
+.env
+drizzle/meta/
+uploads/*
+!uploads/.gitkeep
