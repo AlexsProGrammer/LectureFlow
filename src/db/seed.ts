@@ -2,6 +2,7 @@ import "dotenv/config";
 import { db } from "./index.js";
 import { admins } from "./schema.js";
 import { eq } from "drizzle-orm";
+import { hashPassword } from "../utils/hash.js";
 
 async function seed() {
   console.log("Seeding database...");
@@ -16,9 +17,11 @@ async function seed() {
     process.exit(0);
   }
 
+  const passwordHash = await hashPassword(process.env.SUPERADMIN_PASSWORD || "admin123");
+
   await db.insert(admins).values({
     username: "superadmin",
-    password_hash: "seeded_hash_123",
+    password_hash: passwordHash,
     is_super_admin: true,
   });
 
