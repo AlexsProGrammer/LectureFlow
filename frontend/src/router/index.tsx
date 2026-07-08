@@ -1,9 +1,11 @@
 import { createBrowserRouter } from 'react-router-dom'
 import { PublicLayout } from '../layouts/PublicLayout'
 import { AdminLayout } from '../layouts/AdminLayout'
+import { AdminGuard } from '../components/AdminGuard'
 import { LobbyPage } from '../pages/LobbyPage'
 import { AdminLoginPage } from '../pages/AdminLoginPage'
 import { AdminDashboardPage } from '../pages/AdminDashboardPage'
+import { AdminSetupPage } from '../pages/AdminSetupPage'
 
 export const router = createBrowserRouter([
   {
@@ -21,16 +23,25 @@ export const router = createBrowserRouter([
     ],
   },
   {
-    path: '/admin/login',
-    element: <AdminLoginPage />,
-  },
-  {
-    path: '/admin',
-    element: <AdminLayout />,
+    element: <AdminGuard />,
     children: [
       {
-        index: true,
-        element: <AdminDashboardPage />,
+        path: '/admin/login',
+        element: <AdminLoginPage />,
+      },
+      {
+        path: '/admin/setup',
+        element: <AdminSetupPage />,
+      },
+      {
+        path: '/admin',
+        element: <AdminLayout />,
+        children: [
+          {
+            index: true,
+            element: <AdminDashboardPage />,
+          },
+        ],
       },
     ],
   },

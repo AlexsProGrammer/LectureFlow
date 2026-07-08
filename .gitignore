@@ -5,3 +5,4 @@ dist/
 drizzle/meta/
 uploads/*
 !uploads/.gitkeep
+data/

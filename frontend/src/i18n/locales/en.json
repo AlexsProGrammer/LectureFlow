@@ -26,6 +26,18 @@
     "layout": {
       "logout": "Logout",
       "sidebar": "Navigation"
+    },
+    "setup": {
+      "title": "First-Time Setup",
+      "subtitle": "Create your Super Admin account",
+      "username": "Super Admin Username",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "submit": "Create Super Admin",
+      "passwordMismatch": "Passwords do not match",
+      "passwordTooShort": "Password must be at least 8 characters",
+      "alreadyExists": "Super Admin already exists",
+      "setupFailed": "Setup failed. Please try again."
     }
   },
   "common": {

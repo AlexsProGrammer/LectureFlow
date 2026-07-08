@@ -11,6 +11,7 @@ import { quizzesRoutes } from "./api/quizzes.routes.js";
 import { uploadsRoutes } from "./api/uploads.routes.js";
 import { exportRoutes } from "./api/export.routes.js";
 import { roomsRoutes } from "./api/rooms.routes.js";
+import { setupRoutes } from "./api/setup.routes.js";
 import { initWebSockets } from "./sockets/index.js";
 
 const app = Fastify({
@@ -68,6 +69,7 @@ await app.register(multipart, {
 });
 
 app.register(authRoutes, { prefix: "/api/auth" });
+app.register(setupRoutes, { prefix: "/api/setup" });
 app.register(quizzesRoutes, { prefix: "/api" });
 app.register(uploadsRoutes, { prefix: "/api" });
 app.register(exportRoutes, { prefix: "/api" });
