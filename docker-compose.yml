@@ -4,12 +4,8 @@ services:
     container_name: lf-postgres
     restart: unless-stopped
     env_file: ./backend/.env
-    environment:
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      POSTGRES_DB: ${POSTGRES_DB}
     ports:
-      - "5432:5432"
+      - "5435:5432"
     volumes:
       - ./data/postgres:/var/lib/postgresql/data
 
@@ -24,22 +20,19 @@ services:
 
   app:
     build:
-      context: ./backend
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: backend/Dockerfile
     container_name: lf-app
     restart: unless-stopped
     ports:
       - "3000:3000"
     env_file: ./backend/.env
     environment:
-      DATABASE_URL: ${DATABASE_URL}
-      REDIS_URL: ${REDIS_URL}
+      - REDIS_URL=redis://lf-redis:6379
+      - DATABASE_URL=postgresql://lectureflow:lectureflow_dev@lf-postgres:5432/lectureflow
     depends_on:
       - postgres
       - redis
-    volumes:
-      - ./backend/src:/app/src
-      - ./backend/uploads:/app/uploads
 
 volumes:
   redisdata:

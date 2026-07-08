@@ -19,7 +19,7 @@ export function AdminLoginPage() {
     setLoading(true)
 
     try {
-      const response = await api.post('/login', { username, password })
+      const response = await api.post('/auth/login', { username, password })
       login(response.data.token, response.data.is_super_admin)
       navigate('/admin', { replace: true })
     } catch (err: any) {
