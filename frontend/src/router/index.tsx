@@ -3,6 +3,7 @@ import { PublicLayout } from '../layouts/PublicLayout'
 import { AdminLayout } from '../layouts/AdminLayout'
 import { AdminGuard } from '../components/AdminGuard'
 import { LobbyPage } from '../pages/LobbyPage'
+import { LiveRoomPage } from '../features/room/LiveRoomPage'
 import { AdminLoginPage } from '../pages/AdminLoginPage'
 import { AdminDashboardPage } from '../pages/AdminDashboardPage'
 import { AdminSetupPage } from '../pages/AdminSetupPage'
@@ -18,7 +19,7 @@ export const router = createBrowserRouter([
       },
       {
         path: 'room/:code',
-        element: <LobbyPage />,
+        element: <LiveRoomPage />,
       },
     ],
   },

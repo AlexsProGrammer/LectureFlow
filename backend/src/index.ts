@@ -83,7 +83,7 @@ const port = parseInt(process.env.APP_PORT || "3000", 10);
 
 try {
   await app.ready();
-  const io = initWebSockets(app.server, redis);
+  const io = initWebSockets(app.server, redis, app);
   await app.listen({ port, host: "0.0.0.0" });
   console.log(`Server running on http://0.0.0.0:${port}`);
 } catch (err) {

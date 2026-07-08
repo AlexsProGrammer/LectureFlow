@@ -46,5 +46,27 @@
     "error": "Error",
     "cancel": "Cancel",
     "save": "Save"
+  },
+  "room": {
+    "title": "Live Room",
+    "connecting": "Connecting...",
+    "notFound": "Room not found or expired",
+    "chatwall": {
+      "placeholder": "Type your question...",
+      "send": "Send",
+      "empty": "No questions yet. Be the first to ask!",
+      "delete": "Delete message",
+      "markAnswered": "Mark as answered"
+    },
+    "poll": {
+      "create": "Create Poll",
+      "question": "Question",
+      "addOption": "Add Option",
+      "removeOption": "Remove option",
+      "submit": "Create Poll",
+      "cancel": "Cancel",
+      "vote": "Vote",
+      "noActive": "No active polls"
+    }
   }
 }

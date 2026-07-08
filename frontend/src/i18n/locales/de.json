@@ -46,5 +46,27 @@
     "error": "Fehler",
     "cancel": "Abbrechen",
     "save": "Speichern"
+  },
+  "room": {
+    "title": "Live-Raum",
+    "connecting": "Verbindung wird hergestellt...",
+    "notFound": "Raum nicht gefunden oder abgelaufen",
+    "chatwall": {
+      "placeholder": "Stelle deine Frage...",
+      "send": "Senden",
+      "empty": "Noch keine Fragen. Stelle die erste!",
+      "delete": "Nachricht löschen",
+      "markAnswered": "Als beantwortet markieren"
+    },
+    "poll": {
+      "create": "Umfrage erstellen",
+      "question": "Frage",
+      "addOption": "Option hinzufügen",
+      "removeOption": "Option entfernen",
+      "submit": "Umfrage erstellen",
+      "cancel": "Abbrechen",
+      "vote": "Abstimmen",
+      "noActive": "Keine aktiven Umfragen"
+    }
   }
 }
