@@ -1,0 +1,38 @@
+{
+  "lobby": {
+    "title": "LectureFlow",
+    "subtitle": "Join a Session",
+    "enterCode": "Enter 6-digit code",
+    "join": "Join",
+    "codeRequired": "Please enter a code",
+    "codeInvalid": "Code must be 6 characters"
+  },
+  "admin": {
+    "login": {
+      "title": "Admin Login",
+      "username": "Username",
+      "password": "Password",
+      "signIn": "Sign In",
+      "invalidCredentials": "Invalid credentials",
+      "loginFailed": "Login failed"
+    },
+    "dashboard": {
+      "title": "Dashboard",
+      "welcome": "Welcome, Admin",
+      "rooms": "Rooms",
+      "active": "Active",
+      "createRoom": "Create Room"
+    },
+    "layout": {
+      "logout": "Logout",
+      "sidebar": "Navigation"
+    }
+  },
+  "common": {
+    "language": "Language",
+    "loading": "Loading...",
+    "error": "Error",
+    "cancel": "Cancel",
+    "save": "Save"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "lobby": {
+    "title": "LectureFlow",
+    "subtitle": "Tritt einer Sitzung bei",
+    "enterCode": "6-stelligen Code eingeben",
+    "join": "Beitreten",
+    "codeRequired": "Bitte gib einen Code ein",
+    "codeInvalid": "Der Code muss 6 Zeichen lang sein"
+  },
+  "admin": {
+    "login": {
+      "title": "Admin Login",
+      "username": "Benutzername",
+      "password": "Passwort",
+      "signIn": "Anmelden",
+      "invalidCredentials": "Ungültige Anmeldedaten",
+      "loginFailed": "Anmeldung fehlgeschlagen"
+    },
+    "dashboard": {
+      "title": "Dashboard",
+      "welcome": "Willkommen, Admin",
+      "rooms": "Räume",
+      "active": "Aktiv",
+      "createRoom": "Raum erstellen"
+    },
+    "layout": {
+      "logout": "Abmelden",
+      "sidebar": "Navigation"
+    }
+  },
+  "common": {
+    "language": "Sprache",
+    "loading": "Laden...",
+    "error": "Fehler",
+    "cancel": "Abbrechen",
+    "save": "Speichern"
+  }
+}
