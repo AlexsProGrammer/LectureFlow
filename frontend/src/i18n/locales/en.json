@@ -21,11 +21,18 @@
       "welcome": "Welcome, Admin",
       "rooms": "Rooms",
       "active": "Active",
-      "createRoom": "Create Room"
+      "createRoom": "Create Room",
+      "noRooms": "No active rooms",
+      "totalQuizzes": "Quizzes",
+      "joinRoom": "Join Room",
+      "roomCreated": "Room created",
+      "roomCode": "Room Code"
     },
     "layout": {
       "logout": "Logout",
-      "sidebar": "Navigation"
+      "sidebar": "Navigation",
+      "quizzes": "Quizzes",
+      "rooms": "Rooms"
     },
     "setup": {
       "title": "First-Time Setup",
@@ -38,6 +45,39 @@
       "passwordTooShort": "Password must be at least 8 characters",
       "alreadyExists": "Super Admin already exists",
       "setupFailed": "Setup failed. Please try again."
+    },
+    "quizzes": {
+      "title": "Quizzes",
+      "create": "Create New Quiz",
+      "edit": "Edit",
+      "delete": "Delete",
+      "noQuizzes": "No quizzes available",
+      "questions": "Questions",
+      "created": "Created",
+      "deleteConfirm": "Are you sure you want to delete this quiz?",
+      "deleteSuccess": "Quiz deleted",
+      "deleteError": "Failed to delete quiz"
+    },
+    "quizEditor": {
+      "titleNew": "Create New Quiz",
+      "titleEdit": "Edit Quiz",
+      "quizTitle": "Quiz Title",
+      "addQuestion": "Add Question",
+      "removeQuestion": "Remove Question",
+      "questionType": "Question Type",
+      "multipleChoice": "Multiple Choice",
+      "openText": "Open Text",
+      "questionContent": "Question",
+      "correctAnswer": "Correct Answer",
+      "options": "Answer Options",
+      "addOption": "Add Option",
+      "removeOption": "Remove Option",
+      "mediaUpload": "Upload Media",
+      "save": "Save Quiz",
+      "saving": "Saving...",
+      "saveSuccess": "Quiz saved",
+      "saveError": "Failed to save quiz",
+      "optionLabel": "Option"
     }
   },
   "common": {
@@ -45,12 +85,18 @@
     "loading": "Loading...",
     "error": "Error",
     "cancel": "Cancel",
-    "save": "Save"
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit"
   },
   "room": {
     "title": "Live Room",
     "connecting": "Connecting...",
     "notFound": "Room not found or expired",
+    "tabs": {
+      "chatwall": "Chatwall",
+      "quiz": "Quiz"
+    },
     "chatwall": {
       "placeholder": "Type your question...",
       "send": "Send",
@@ -67,6 +113,32 @@
       "cancel": "Cancel",
       "vote": "Vote",
       "noActive": "No active polls"
+    },
+    "quiz": {
+      "start": "Start Quiz",
+      "selectQuiz": "Select a Quiz",
+      "waiting": "Waiting for quiz to start...",
+      "submitAnswer": "Submit Answer",
+      "answerSent": "Answer submitted",
+      "nextQuestion": "Next Question",
+      "revealSolution": "Reveal Solution",
+      "endQuiz": "End Quiz",
+      "quizEnded": "Quiz Ended",
+      "finished": "All questions completed",
+      "result": {
+        "correct": "Correct",
+        "incorrect": "Incorrect",
+        "noAnswer": "No Answer"
+      },
+      "noActiveQuiz": "No active quiz",
+      "question": "Question",
+      "of": "of",
+      "openTextPlaceholder": "Enter your answer...",
+      "liveAnswers": "Live Answers",
+      "noAnswersYet": "No answers yet",
+      "selectQuizToStart": "Select a quiz from the list",
+      "searchQuiz": "Search quizzes...",
+      "totalVotes": "Responses"
     }
   }
 }

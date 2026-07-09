@@ -4,6 +4,7 @@ import type Redis from "ioredis";
 import { nanoid } from "nanoid";
 import type { FastifyInstance } from "fastify";
 import { registerRoomEvents } from "./room.events.js";
+import { registerQuizEvents } from "./quiz.events.js";
 
 export function initWebSockets(server: any, redisClient: Redis, app: FastifyInstance): Server {
   const pubClient = redisClient.duplicate();
@@ -47,6 +48,7 @@ export function initWebSockets(server: any, redisClient: Redis, app: FastifyInst
   io.on("connection", (socket) => {
     socket.emit("session", { sessionId: socket.data.sessionId });
     registerRoomEvents(io, socket, app);
+    registerQuizEvents(io, socket, app);
   });
 
   return io;

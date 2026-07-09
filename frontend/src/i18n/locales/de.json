@@ -21,11 +21,18 @@
       "welcome": "Willkommen, Admin",
       "rooms": "Räume",
       "active": "Aktiv",
-      "createRoom": "Raum erstellen"
+      "createRoom": "Raum erstellen",
+      "noRooms": "Keine aktiven Räume",
+      "totalQuizzes": "Quizze",
+      "joinRoom": "Raum beitreten",
+      "roomCreated": "Raum erstellt",
+      "roomCode": "Raum-Code"
     },
     "layout": {
       "logout": "Abmelden",
-      "sidebar": "Navigation"
+      "sidebar": "Navigation",
+      "quizzes": "Quizze",
+      "rooms": "Räume"
     },
     "setup": {
       "title": "Ersteinrichtung",
@@ -38,6 +45,39 @@
       "passwordTooShort": "Passwort muss mindestens 8 Zeichen lang sein",
       "alreadyExists": "Super-Admin existiert bereits",
       "setupFailed": "Einrichtung fehlgeschlagen. Bitte versuche es erneut."
+    },
+    "quizzes": {
+      "title": "Quizze",
+      "create": "Neues Quiz erstellen",
+      "edit": "Bearbeiten",
+      "delete": "Löschen",
+      "noQuizzes": "Keine Quizze vorhanden",
+      "questions": "Fragen",
+      "created": "Erstellt",
+      "deleteConfirm": "Quiz wirklich löschen?",
+      "deleteSuccess": "Quiz gelöscht",
+      "deleteError": "Löschen fehlgeschlagen"
+    },
+    "quizEditor": {
+      "titleNew": "Neues Quiz erstellen",
+      "titleEdit": "Quiz bearbeiten",
+      "quizTitle": "Quiz-Titel",
+      "addQuestion": "Frage hinzufügen",
+      "removeQuestion": "Frage entfernen",
+      "questionType": "Fragetyp",
+      "multipleChoice": "Multiple Choice",
+      "openText": "Offener Text",
+      "questionContent": "Frage",
+      "correctAnswer": "Richtige Antwort",
+      "options": "Antwortoptionen",
+      "addOption": "Option hinzufügen",
+      "removeOption": "Option entfernen",
+      "mediaUpload": "Medien hochladen",
+      "save": "Quiz speichern",
+      "saving": "Speichern...",
+      "saveSuccess": "Quiz gespeichert",
+      "saveError": "Speichern fehlgeschlagen",
+      "optionLabel": "Option"
     }
   },
   "common": {
@@ -45,12 +85,18 @@
     "loading": "Laden...",
     "error": "Fehler",
     "cancel": "Abbrechen",
-    "save": "Speichern"
+    "save": "Speichern",
+    "delete": "Löschen",
+    "edit": "Bearbeiten"
   },
   "room": {
     "title": "Live-Raum",
     "connecting": "Verbindung wird hergestellt...",
     "notFound": "Raum nicht gefunden oder abgelaufen",
+    "tabs": {
+      "chatwall": "Chatwall",
+      "quiz": "Quiz"
+    },
     "chatwall": {
       "placeholder": "Stelle deine Frage...",
       "send": "Senden",
@@ -67,6 +113,32 @@
       "cancel": "Abbrechen",
       "vote": "Abstimmen",
       "noActive": "Keine aktiven Umfragen"
+    },
+    "quiz": {
+      "start": "Quiz starten",
+      "selectQuiz": "Quiz auswählen",
+      "waiting": "Warte auf das Quiz...",
+      "submitAnswer": "Antwort senden",
+      "answerSent": "Antwort gesendet",
+      "nextQuestion": "Nächste Frage",
+      "revealSolution": "Lösung anzeigen",
+      "endQuiz": "Quiz beenden",
+      "quizEnded": "Quiz beendet",
+      "finished": "Alle Fragen abgeschlossen",
+      "result": {
+        "correct": "Richtig",
+        "incorrect": "Falsch",
+        "noAnswer": "Keine Antwort"
+      },
+      "noActiveQuiz": "Kein aktives Quiz",
+      "question": "Frage",
+      "of": "von",
+      "openTextPlaceholder": "Deine Antwort eingeben...",
+      "liveAnswers": "Live-Antworten",
+      "noAnswersYet": "Noch keine Antworten",
+      "selectQuizToStart": "Wähle ein Quiz aus der Liste",
+      "searchQuiz": "Quiz suchen...",
+      "totalVotes": "Antworten"
     }
   }
 }

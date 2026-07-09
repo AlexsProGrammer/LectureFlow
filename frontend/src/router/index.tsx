@@ -7,6 +7,8 @@ import { LiveRoomPage } from '../features/room/LiveRoomPage'
 import { AdminLoginPage } from '../pages/AdminLoginPage'
 import { AdminDashboardPage } from '../pages/AdminDashboardPage'
 import { AdminSetupPage } from '../pages/AdminSetupPage'
+import { QuizList } from '../features/admin/QuizList'
+import { QuizEditor } from '../features/admin/QuizEditor'
 
 export const router = createBrowserRouter([
   {
@@ -41,6 +43,18 @@ export const router = createBrowserRouter([
           {
             index: true,
             element: <AdminDashboardPage />,
+          },
+          {
+            path: 'quizzes',
+            element: <QuizList />,
+          },
+          {
+            path: 'quizzes/new',
+            element: <QuizEditor />,
+          },
+          {
+            path: 'quizzes/:quizId/edit',
+            element: <QuizEditor />,
           },
         ],
       },

@@ -1,9 +1,11 @@
-import { Outlet, Navigate } from 'react-router-dom'
+import { Outlet, Navigate, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useAuthStore } from '../store/useAuthStore'
+import { LayoutDashboard, BookOpen } from 'lucide-react'
 
 export function AdminLayout() {
   const { t } = useTranslation()
+  const location = useLocation()
   const token = useAuthStore((state) => state.token)
   const logout = useAuthStore((state) => state.logout)
   const isSuperAdmin = useAuthStore((state) => state.isSuperAdmin)
@@ -11,6 +13,11 @@ export function AdminLayout() {
   if (!token) {
     return <Navigate to="/admin/login" replace />
   }
+
+  const navItems = [
+    { path: '/admin', label: t('admin.dashboard.title'), icon: LayoutDashboard },
+    { path: '/admin/quizzes', label: t('admin.layout.quizzes'), icon: BookOpen },
+  ]
 
   return (
     <div className="flex min-h-screen bg-gray-50">
@@ -28,12 +35,24 @@ export function AdminLayout() {
           <p className="mb-2 px-2 text-xs font-semibold uppercase tracking-wider text-gray-400">
             {t('admin.layout.sidebar')}
           </p>
-          <a
-            href="/admin"
-            className="block rounded-lg px-3 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100"
-          >
-            Dashboard
-          </a>
+          {navItems.map((item) => {
+            const Icon = item.icon
+            const isActive = location.pathname === item.path || (item.path !== '/admin' && location.pathname.startsWith(item.path))
+            return (
+              <a
+                key={item.path}
+                href={item.path}
+                className={`mb-1 flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition ${
+                  isActive
+                    ? 'bg-indigo-50 text-indigo-700'
+                    : 'text-gray-700 hover:bg-gray-100'
+                }`}
+              >
+                <Icon className="h-4 w-4" />
+                {item.label}
+              </a>
+            )
+          })}
         </nav>
 
         <div className="absolute bottom-4 left-4 right-4">

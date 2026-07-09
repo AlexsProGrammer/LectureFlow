@@ -38,3 +38,16 @@ export const media = pgTable("media", {
   file_path: varchar("file_path", { length: 500 }).notNull(),
   type: mediaTypeEnum("type").notNull().default("image"),
 });
+
+export const quizResults = pgTable("quiz_results", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  quiz_id: uuid("quiz_id")
+    .notNull()
+    .references(() => quizzes.id, { onDelete: "cascade" }),
+  room_code: varchar("room_code", { length: 10 }).notNull(),
+  question_id: uuid("question_id")
+    .notNull()
+    .references(() => questions.id, { onDelete: "cascade" }),
+  aggregated_results: jsonb("aggregated_results").notNull(),
+  completed_at: timestamp("completed_at").notNull().defaultNow(),
+});

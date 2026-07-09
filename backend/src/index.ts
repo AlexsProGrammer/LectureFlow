@@ -5,6 +5,7 @@ import helmet from "@fastify/helmet";
 import rateLimit from "@fastify/rate-limit";
 import jwt from "@fastify/jwt";
 import multipart from "@fastify/multipart";
+import fastifyStatic from "@fastify/static";
 import { redis } from "./plugins/redis.js";
 import { authRoutes } from "./api/auth.routes.js";
 import { quizzesRoutes } from "./api/quizzes.routes.js";
@@ -66,6 +67,17 @@ await app.register(multipart, {
   limits: {
     fileSize: 10 * 1024 * 1024,
   },
+});
+
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const uploadsDir = path.resolve(__dirname, "../uploads");
+
+await app.register(fastifyStatic, {
+  root: uploadsDir,
+  prefix: "/uploads/",
 });
 
 app.register(authRoutes, { prefix: "/api/auth" });

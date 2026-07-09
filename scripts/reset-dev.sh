@@ -18,6 +18,12 @@ echo "[reset-dev] Waiting for Postgres to be ready..."
 sleep 3
 
 echo "[reset-dev] Pushing Drizzle schema..."
-pnpm --filter @lectureflow/backend db:push
+if [ "$EUID" -eq 0 ] && [ -n "${SUDO_USER:-}" ]; then
+  sudo -u "$SUDO_USER" bash -c 'pnpm --filter @lectureflow/backend db:push' 2>/dev/null \
+    || sudo -u "$SUDO_USER" bash -c 'npx --yes pnpm --filter @lectureflow/backend db:push'
+else
+  pnpm --filter @lectureflow/backend db:push 2>/dev/null \
+    || npx --yes pnpm --filter @lectureflow/backend db:push
+fi
 
 echo "[reset-dev] Done. Fresh environment ready."
